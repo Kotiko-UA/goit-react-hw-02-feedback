@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'; //npm install styled-components
 import 'modern-normalize'; //npm install modern-normalize
 export const GlobalStyle = createGlobalStyle`
 
