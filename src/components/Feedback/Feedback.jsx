@@ -1,7 +1,6 @@
 import { Button, Wrapper } from './Feedback.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(options);
   return (
     <Wrapper>
       {options.map(option => (
