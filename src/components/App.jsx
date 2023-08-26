@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { FeedbackOptions } from './Feedback/Feedback';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
+import { nanoid } from 'nanoid';
 
 export class App extends Component {
   state = { good: 0, neutral: 0, bad: 0, total: 0, positivePercentage: 0 };
@@ -20,9 +21,18 @@ export class App extends Component {
   };
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.state;
+    const options = [
+      { id: nanoid(), name: 'good' },
+      { id: nanoid(), name: 'neutral' },
+      { id: nanoid(), name: 'bad' },
+    ];
+
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions onLeaveFeedback={this.onClickFeedback} />
+        <FeedbackOptions
+          options={options}
+          onLeaveFeedback={this.onClickFeedback}
+        />
         <Statistics
           good={good}
           neutral={neutral}
